@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="KeyValues2" Version="0.8.0" />
   </ItemGroup>
 
 </Project>
