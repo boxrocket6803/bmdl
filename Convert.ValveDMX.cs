@@ -6,6 +6,11 @@ using System.Numerics;
 
 [Convert.Association(["dmx"])]
 public class ValveDMX : Convert.Source {
+	public override bool CanRead(string path) {
+		var dmx = Datamodel.Load(path);
+		return dmx.Root.ContainsKey("model");
+	}
+
 	public override Model Read(string path) {
 		Model m = new();
 		var dmx = Datamodel.Load(path);

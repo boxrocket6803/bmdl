@@ -9,6 +9,7 @@ public class Convert {
 	}
 	public class Source {
 		public virtual Model Read(string path) {return null;}
+		public virtual bool CanRead(string path) => true;
 	}
 
 	public static bool Supports(string file) {
@@ -19,6 +20,9 @@ public class Convert {
 			if (assoc is null)
 				continue;
 			if (!assoc.Types.Contains(file.Split('.').Last()))
+				continue;
+			var inst = (Source)type.GetConstructor([]).Invoke([]);
+			if (!inst.CanRead(file))
 				continue;
 			return true;
 		}
