@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿namespace bmdl;
+using System.Numerics;
 
 public partial class Model {
 	[Flags] public enum Flags {

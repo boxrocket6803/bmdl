@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿namespace bmdl;
+using System.Numerics;
 
 public struct Transform {
 	public Transform(Vector3 pos, Quaternion rot) {
